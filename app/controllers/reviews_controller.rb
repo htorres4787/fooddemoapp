@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
 
   def create
     the_review = Review.new
-    #the_review.user_id = params.fetch("query_user_id")
+    the_review.user_id = session[:user_id]
     the_review.food_id = params.fetch("query_food_id")
     the_review.body = params.fetch("query_body")
     the_review.restaurant_id = params.fetch("query_restaurant_id")

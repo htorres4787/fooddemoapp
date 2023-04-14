@@ -12,3 +12,28 @@
  *
  *= require_self
  */
+
+ .pic1 {
+  text-align: center;
+  border-radius: 100px;
+ }
+
+body {
+  background-color: coral;
+}
+
+.title {
+  text-align: center;
+ }
+
+ .option_sections {
+  text-align: center;
+ }
+
+ .sign_up {
+  text-align: center;
+ }
+
+ .forms {
+  text-align: center;
+ }

@@ -1,9 +1,26 @@
+<body>
 <div>
   <div>
     <h1>
       List of all foods
     </h1>
   </div>
+</div>
+
+<hr>
+
+<div>
+
+  <p>A list to get your appetite <a href="https://www.eatthis.com/american-foods/">running</a></p>
+
+  <p>List of <a href="https://www.listchallenges.com/ultimate-list-of-restaurants">restaurants</a></p>
+
+  <p>Vegan? Not a problem, this <a href="https://www.happycow.net/">website got you covered</a></p>
+
+  <p>Review a restaurant <a href="/reviews">here</a></p>
+
+  <p>Save a restaurant <a href="restaurants">here</a></p>
+
 </div>
 
 <hr>
@@ -33,12 +50,9 @@
 <hr>
 <div>
   <div>
-    <table border="1">
+    <table class="table table-bordered">
       <tr>
-        <th>
-          ID
-        </th>
-
+      
         <th>
           Name
         </th>
@@ -57,9 +71,6 @@
 
       <% @list_of_foods.each do |a_food| %>
       <tr>
-        <td>
-          <%= a_food.id %>
-        </td>
 
         <td>
           <%= a_food.name %>
@@ -77,6 +88,10 @@
             Show details
           </a>
         </td>
+
+        <td>
+          <a href="delete_food/<%= a_food.id %>">Delete</a>
+        </td>
       </tr>
       <% end %>
     </table>
@@ -84,3 +99,5 @@
 </div>
 
 <hr>
+
+</body>
