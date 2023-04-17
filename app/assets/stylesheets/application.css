@@ -13,16 +13,40 @@
  *= require_self
  */
 
+ .main-container {
+  max-width: 800px;
+  margin: auto
+ }
+
  .pic1 {
+  width: 95%;
   text-align: center;
-  border-radius: 100px;
+  border-radius: 85%;
+ }
+
+ .picture2 {
+  text-align: center;
+ }
+
+ .picture3 {
+  width: 50%;
+  text-align: right;
+ }
+
+ .picture4 {
+  width: 80%;
+  text-align: center;
  }
 
 body {
-  background-color: coral;
+  background-color: rgb(255, 199, 179);
 }
 
 .title {
+  text-align: center;
+ }
+
+ .sign_in_section {
   text-align: center;
  }
 
@@ -34,6 +58,10 @@ body {
   text-align: center;
  }
 
- .forms {
-  text-align: center;
+ ul.a {
+  list-style-type: square;
+ }
+
+ .sign_out {
+  text-align: right;
  }

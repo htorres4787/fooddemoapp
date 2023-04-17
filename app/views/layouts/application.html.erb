@@ -24,12 +24,22 @@
   </head>
 
   <body>
-    <% flash.each do |type, msg| %>
-      <div class="alert alert-primary">
-        <%= msg %>
-      </div>
-    <% end %>
+    <div class="main-container">
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-primary">
+          <%= msg %>
+        </div>
+      <% end %>
 
-    <%= yield %>
+      <div class="sign_out">
+        <% if session.fetch(:user_id) != nil %>
+          <ul>
+            <a href="/user_sign_out">Sign Out</a>
+          </ul>
+        <% end %>
+      </div>
+
+      <%= yield %>
+    </div>
   </body>
 </html>

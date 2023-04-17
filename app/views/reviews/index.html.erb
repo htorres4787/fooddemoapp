@@ -9,13 +9,15 @@
 <hr>
 
 <div>
-  <p>Find a <a href="https://www.listchallenges.com/ultimate-list-of-restaurants">restaurant</a></p>
+<ul class="a">
+  <li>Find a <a href="https://www.listchallenges.com/ultimate-list-of-restaurants">restaurant</a></li>
 
-  <p>Vegan? Not a problem, this <a href="https://www.happycow.net/">website got you covered</a></p>
+  <li>Vegan? Not a problem, this <a href="https://www.happycow.net/">website got you covered</a></li>
 
-  <p>Save a restaurant <a href="/restaurants">here</a></p>
+  <li>Save a restaurant <a href="/restaurants">here</a></li>
 
-  <p>Found a food you want to try out? Save it <a href="/foods">here</a></p>
+  <li>Found a food you want to try out? Save it <a href="/foods">here</a></li>
+</ul>
 </div>
 
 <hr>
@@ -32,18 +34,22 @@
           Food
         </label>
 
+        
         <select name="query_food_id" id="food_id_box">
           <% Food.all.order(:name).each do |food| %>
             <option value="<%= food.id %>">
               <%= food.name %>
             </option>
           <% end %>
+          <%#input type="text" id="food_text" name="specify"%>
         </select>
+
+        Don't see the food you want to review? <a href="/foods">Click here to add a new food.</a>
       </div>
 
       <div>
         <label for="body_box">
-          Body
+          Review/Thoughts
         </label>
 
         <input type="text" id="body_box" name="query_body">
@@ -149,3 +155,7 @@
 </div>
 
 <hr>
+
+<div class="picture4">
+    <%= image_tag("food_pic_review-4.jpeg", class: "picture4") %>
+</div>
