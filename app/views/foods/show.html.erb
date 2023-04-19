@@ -1,7 +1,7 @@
-<div>
+<div class="container">
   <div>
     <h1>
-      Food #<%= @the_food.id %> details
+      <%= @the_food.name %> details
     </h1>
 
     <div>
@@ -27,6 +27,13 @@
       </dd>
 
       <dt>
+        Opinion/Extra Thoughts
+      </dt>
+      <dd>
+        <%= @the_food.opinion %>
+      </dd>
+
+      <dt>
         Created at
       </dt>
       <dd>
@@ -45,6 +52,13 @@
 
 <hr>
 
+<h3>Associated restaurant towards this food.</h3>
+
+<% @the_food.restaurant.distinct(:id).each do |restaurant| %>
+  <p><%= restaurant.name %></p>
+<% end %>
+
+<hr>
 
 <div>
   <div>
@@ -61,6 +75,14 @@
         <input type="text" id="name_box" name="query_name" value="<%= @the_food.name %>">
       </div>
 
+      <div>
+        <label for="opinion">
+          Otheir Opinion
+        </label>
+
+        <textarea class="w-100" rows="2" type="text" id="opinion" name="query_opinion"></textarea>
+      </div>
+      
       <button>
         Update food
       </button>

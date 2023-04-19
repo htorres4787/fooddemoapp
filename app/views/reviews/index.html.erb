@@ -9,15 +9,15 @@
 <hr>
 
 <div>
-<ul class="a">
-  <li>Find a <a href="https://www.listchallenges.com/ultimate-list-of-restaurants">restaurant</a></li>
+  <ul class="a">
+    <li>Find a <a href="https://www.listchallenges.com/ultimate-list-of-restaurants">restaurant</a></li>
 
-  <li>Vegan? Not a problem, this <a href="https://www.happycow.net/">website got you covered</a></li>
+    <li>Vegan? Not a problem, this <a href="https://www.happycow.net/">website got you covered</a></li>
 
-  <li>Save a restaurant <a href="/restaurants">here</a></li>
+    <li>Save a restaurant <a href="/restaurants">here</a></li>
 
-  <li>Found a food you want to try out? Save it <a href="/foods">here</a></li>
-</ul>
+    <li>Found a food you want to try out? Save it <a href="/foods">here</a></li>
+  </ul>
 </div>
 
 <hr>
@@ -34,7 +34,6 @@
           Food
         </label>
 
-        
         <select name="query_food_id" id="food_id_box">
           <% Food.all.order(:name).each do |food| %>
             <option value="<%= food.id %>">
@@ -51,8 +50,9 @@
         <label for="body_box">
           Review/Thoughts
         </label>
-
-        <input type="text" id="body_box" name="query_body">
+      </div>
+      <div>
+        <textarea class="w-100" rows="3" type="text" id="body_box" name="query_body"></textarea>
       </div>
 
       <div>
@@ -66,6 +66,7 @@
             <option value="<%= restaurant.id %>"><%= restaurant.name %></option>
           <% end %>
         </select>
+        <p>Want to add/save a new restaurant? <a href="/restaurants">Click here to add a new restaurant.</a></p>
       </div>
 
       <button>
@@ -73,6 +74,10 @@
       </button>
     </form>
   </div>
+</div>
+
+<div class="picture4">
+  <%= image_tag("food_pic_review-4.jpeg", class: "picture4") %>
 </div>
 
 <hr>
@@ -90,7 +95,7 @@
         </th>
 
         <th>
-          Body
+          Review
         </th>
 
         <th>
@@ -110,52 +115,48 @@
       </tr>
 
       <% @list_of_reviews.each do |a_review| %>
-      <tr>
+        <tr>
 
-        <td>
-          <%= a_review.user.name %> <%# User must exist? %>
-        </td>
+          <td>
+            <%= a_review.user.name %> <%# User must exist? %>
+          </td>
 
-        <td>
-          <%= a_review.food.name %> <%# Food must exist? %>
-        </td>
+          <td>
+            <%= a_review.food.name %> <%# Food must exist? %>
+          </td>
 
-        <td>
-          <%= a_review.body %>
-        </td>
+          <td>
+            <%= a_review.body %>
+          </td>
 
-        <td>
-          <%= a_review.restaurant.name %>
-        </td>
+          <td>
+            <%= a_review.restaurant.name %>
+          </td>
 
-        <td>
-          <%= time_ago_in_words(a_review.created_at) %> ago
-        </td>
+          <td>
+            <%= time_ago_in_words(a_review.created_at) %> ago
+          </td>
 
-        <td>
-          <%= time_ago_in_words(a_review.updated_at) %> ago
-        </td>
+          <td>
+            <%= time_ago_in_words(a_review.updated_at) %> ago
+          </td>
 
-        <td>
-          <a href="/reviews/<%= a_review.id %>">
-            Show details
-          </a>
-        </td>
-        
-        <td>
-          <a href="/delete_review/<%= a_review.id %>">
-            Delete
-          </a>
-        </td>
+          <td>
+            <a href="/reviews/<%= a_review.id %>">
+              Show details
+            </a>
+          </td>
 
-      </tr>
+          <td>
+            <a href="/delete_review/<%= a_review.id %>">
+              Delete
+            </a>
+          </td>
+
+        </tr>
       <% end %>
     </table>
   </div>
 </div>
 
 <hr>
-
-<div class="picture4">
-    <%= image_tag("food_pic_review-4.jpeg", class: "picture4") %>
-</div>

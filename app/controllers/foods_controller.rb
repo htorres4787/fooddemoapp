@@ -35,6 +35,8 @@ class FoodsController < ApplicationController
 
     the_food.name = params.fetch("query_name")
 
+    the_food.opinion = params.fetch("query_opinion")
+
     if the_food.valid?
       the_food.save
       redirect_to("/foods/#{the_food.id}", { :notice => "Food updated successfully."} )

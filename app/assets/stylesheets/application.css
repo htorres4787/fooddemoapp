@@ -38,6 +38,16 @@
   text-align: center;
  }
 
+ .picture5 {
+  width: 80%;
+  text-align: right;
+ }
+
+ .picture6 {
+  width: 70%;
+  text-align: right;
+ }
+
 body {
   background-color: rgb(255, 199, 179);
 }
@@ -63,5 +73,9 @@ body {
  }
 
  .sign_out {
+  text-align: right;
+ }
+
+ .home_page {
   text-align: right;
  }
